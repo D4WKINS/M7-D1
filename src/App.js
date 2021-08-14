@@ -11,7 +11,7 @@ function App() {
   const [search,setSearch] = useState('');
 
 const handleSearch = (query) =>{
-    this.setState({search:query});
+    setSearch(query);
     console.log(query);
 }
   const handleJobs = (jobs) =>{
@@ -21,7 +21,7 @@ const handleSearch = (query) =>{
     <>
     <Navigation searchQuery={(query)=>handleSearch(query)}/>
     <Router>
-    <Route path="/" exact render={(routerProps)=> <Home jobs={(fetch)=>handleJobs(fetch)}/> }/>
+    <Route path="/" exact render={(routerProps)=> <Home searchQuery={search} jobs={(fetch)=>handleJobs(fetch)}/> }/>
     <Route path="/details" render={(routerProps)=> <Details jobs={jobs} {...routerProps}/>} />
     </Router>
     </>
