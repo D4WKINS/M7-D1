@@ -9,7 +9,7 @@ class Home extends Component {
      }
 
     fetchJobs = async() => {
-        let response = await fetch(" https://remotive.io/api/remote-jobs")
+        let response = await fetch(" https://remotive.io/api/remote-jobs?limit=10")
         if(response.status === 200){
         let jobs = await response.json()
         jobs = jobs.jobs
@@ -18,7 +18,7 @@ class Home extends Component {
     }
 
     fetchJobsBySearch = async(query) => {
-        let response = await fetch(`https://remotive.io/api/remote-jobs${query}`)
+        let response = await fetch(`https://remotive.io/api/remote-jobs?search=${query}`)
         if(response.status === 200){
         let jobs = await response.json()
         jobs = jobs.jobs

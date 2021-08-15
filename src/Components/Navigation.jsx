@@ -9,9 +9,7 @@ class Navigation extends Component {
       }
     handleSearch(query) {
       this.setState({search: query})
-      if(this.state.search){
-        this.props.searchQuery(this.state.search)
-      }
+      this.props.searchQuery(this.state.search)
     
     }
 

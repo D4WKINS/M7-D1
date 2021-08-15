@@ -1,0 +1,1 @@
+export const searchJobs = `SEARCH_JOBS`
